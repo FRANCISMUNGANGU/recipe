@@ -23,7 +23,7 @@ import com.example.myapplication.models.yummyrecipes
 
 @Composable
 fun DetailScreen(id:Long, name: String?,onNavigateUp: () -> Unit){
-    val recipes = yummyrecipes.first{ it.id == id }
+    val recipes = yummyrecipes.get(index = id.toInt() -1)
     val scrollState = rememberScrollState()
     Scaffold{
         Column(Modifier.padding(it)) {
